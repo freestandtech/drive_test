@@ -1,21 +1,24 @@
-# Renault Duster · Test-drive demo
+# Renault × FreeStand · test-drive demo
 
 Live: https://freestandtech.github.io/drive_test/
 
-A click-through demo in FreeStand UI. It follows one lead (Shubham Kohli, Rajouri Garden) through four stages:
+A click-through demo that starts with the problem and then shows one Duster test drive end to end:
 
-1. **Booking**: Instagram ad → renault.co.in booking page → OTP → WhatsApp.
-2. **Validation**: driving licence (OCR + Parivahan match), optional soft credit check, address quality score, intent and exchange enrichment → grade-A lead.
-3. **Fulfilment**: offered to the 3 nearest Renault dealers; the first to accept wins (Kirti Nagar, 1 m 48 s); consultant, demo car and slot assigned.
-4. **Confirmation & AI calling**: WhatsApp confirmation, an AI call the evening before (Hinglish, reschedule), live tracking, handover at the gate, feedback and quote.
+0. **The problem**: a real customer conversation (WhatsApp + X post, Ahmedabad, 19 Oct 2026), why test drives break, and what we solve.
+1. **Booking**: Renault’s Instagram ad → renault.co.in → one-time code → WhatsApp.
+2. **Validation**: driving licence (Parivahan match), optional soft credit check, address quality, intent → grade-A lead.
+3. **Fulfilment**: the three nearest Renault dealers get the lead in a modal over the customer profile; the first to accept wins; consultant, demo car and slot assigned.
+4. **Confirmation & AI calling**: WhatsApp confirmation, an AI call the evening before (English), live tracking on the day, a completed test drive with feedback.
 
-It ends with programme analytics and a thank-you slide. All figures are demo data.
+Then programme analytics (test drives only, no sales) and a closing slide. All figures are demo data.
 
-The WhatsApp chats play live (typing, taps, one message at a time) and each panel waits for the message it depends on. Next / Previous, the rail, ← → keys, Home / End; `#5` in the URL opens step 5.
+WhatsApp chats play live (typing, taps, one message at a time); each panel waits for the message it depends on. Next / Previous, the rail, ← → keys; `#5` opens step 5.
 
-## People
+## Images
 
-The characters are **Desi Log** illustrations by Juhi Chitra (https://desilog.in, CC BY 4.0), the human library used in the HUL CDP demo. Credit is shown on the rail and the closing slide; see `assets/desilog/LICENSE.md`.
+- `assets/img/duster-*.webp`: Renault’s own Duster campaign visuals, from renault.co.in (cdn.group.renault.com).
+- `assets/img/customer.webp`, `consultant.webp`: Pexels photos 4307884 and 2505053 (Pexels licence). The names in the demo are fictional.
+- `assets/img/problem-*.webp`: the customer screenshots shared for the demo; the X author’s name, handle and photo are blurred.
 
 ## Build
 
@@ -23,7 +26,4 @@ The characters are **Desi Log** illustrations by Juhi Chitra (https://desilog.in
 node build.mjs   # writes index.html (served by GitHub Pages) and dist/index.html
 ```
 
-- `src/scenes.mjs`: the illustrated scenes (home, dealer map, showroom, AI call, handover, cover).
-- `kit/`: the HUL CDP scene kit (`kit.js`) and its v2 Desi Log people layer (`people.js`, `cast.js`).
-- `src/car.mjs`: the Duster drawing and the Renault mark.
-- `src/app.js`, `src/styles.css`: the FreeStand UI shell, the live chat engine, phones and panels.
+`src/app.js` holds the steps, the live chat engine, phones and panels; `src/styles.css` the FreeStand UI styles.
